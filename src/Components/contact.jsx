@@ -4,7 +4,7 @@ import gmail from "../assets/gmail.svg"
 import linkedin from "../assets/linkedin.svg"
 import github from "../assets/github.svg"
 import resume from "../assets/Rohit-Resume.pdf"
-import AnimateLeftToRight from "./Animation/AnimateLeftToRight"
+import AnimateLeftToRight from "./Animation/AnimateLeftToright"
 import axios from "axios";
 import toast from "react-hot-toast";
 
