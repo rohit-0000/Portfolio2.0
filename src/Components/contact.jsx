@@ -1,7 +1,7 @@
 import React from "react";
 import { useForm } from "react-hook-form";
 import gmail from "../assets/gmail.svg"
-import linkedin from "../assets/linkedin.svg"
+import linkedin from "../assets/Linkedin.svg"
 import github from "../assets/github.svg"
 import resume from "../assets/Rohit-Resume.pdf"
 import AnimateLeftToRight from "./Animation/AnimateLeftToright"
