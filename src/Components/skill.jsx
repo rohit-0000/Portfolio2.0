@@ -9,7 +9,7 @@ import sqlLogo from "../assets/sqlLogo.png";
 import CSS from "../assets/cssLogo.png";
 import html from "../assets/htmlLogo.png";
 import AnimatedSection from "./Animation/AnimatedSectionScale";
-import AnimateLeftToRight from "./Animation/AnimateLeftToRight";
+import AnimateLeftToRight from "./Animation/AnimateLeftToright";
 const skill = () => {
   const skills = [
     CppLogo,
