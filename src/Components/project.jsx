@@ -191,8 +191,8 @@ const project = () => {
         "Tailwind CSS": tailwindLogo,
       },
 
-      link: "https://rohit-0000.github.io/Portfolio-frontend/",
-      git: "https://github.com/rohit-0000/Portfolio",
+      link: "https://portfolio2-0-eta-three.vercel.app/",
+      git: "https://github.com/rohit-0000/Portfolio2.0",
     },
     {
       banner: studySync,
