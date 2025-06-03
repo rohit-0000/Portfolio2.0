@@ -1,0 +1,50 @@
+@import "tailwindcss";
+
+@layer utilities {
+  .scrollbar::-webkit-scrollbar {
+    width: 6px;
+  }
+  .scrollbar::-webkit-scrollbar-track {
+    background: transparent;
+  }
+  .scrollbar::-webkit-scrollbar-thumb {
+    background: #aaa9a9;
+    border-radius: 5px;
+  }
+  .scrollbar::-webkit-scrollbar-thumb:hover {
+    background: #ebebeb;
+  }
+}
+
+@keyframes slideInRight {
+  from {
+    transform: translateX(100%);
+    opacity: 0;
+  }
+  to {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+
+.rightBox {
+  animation: slideInRight 1s ease-out forwards;
+}
+@keyframes slideInLeft {
+  from {
+    transform: translateX(-100%);
+    opacity: 0;
+  }
+  to {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+
+.leftBox {
+  animation: slideInLeft 1s ease-out forwards;
+}
+
+html {
+  scroll-behavior:smooth;
+}
