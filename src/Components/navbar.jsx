@@ -16,7 +16,7 @@ const navbar = () => {
           }
         });
       },
-      { threshold: 0.1 }
+      { threshold: 0.2 }
     );
 
     sections.forEach((id) => {
