@@ -10,10 +10,10 @@ import toast from "react-hot-toast";
 
 const contact = () => {
   const {
-    register,
-    handleSubmit,
-    formState: { errors },
-  } = useForm();
+  register,
+  handleSubmit,
+  formState: { errors, isSubmitting },
+} = useForm();
   const onSubmit = async (data) => {
     try {
       await axios.post(import.meta.env.VITE_BACKEND_URL, data);
@@ -83,7 +83,7 @@ const contact = () => {
               {errors.message && <p className="text-sm text-red-500 italic">{errors.message.message}</p>}
             </div>
 
-            <button type="submit" className="bg-green-500 px-2 py-2 w-fit rounded-md active:scale-90 ">Submit</button>
+            <input type="submit" className={`px-2 py-2 w-fit rounded-md active:scale-90 ${isSubmitting?"bg-green-700":"bg-green-500"}`} value={isSubmitting?"Submitting":"Submit"} disabled={isSubmitting}/>
           </form>
         </div>
       </div>

@@ -70,11 +70,11 @@ const About = () => {
               </a>
               <a className="flex flex-col items-center justify-between gap-2" href="https://www.geeksforgeeks.org/user/rohit2038sf/">
                 <img src={gfg} className="h-15" />
-                <p className="text-xl">Leetcode</p>
+                <p className="text-xl">GFG</p>
               </a>
               <a className="flex flex-col items-center gap-2 " href="https://github.com/rohit-0000">
                 <img src={github} className="h-15" />
-                <p className="text-xl">Leetcode</p>
+                <p className="text-xl">Github</p>
               </a>
             </div>
           </div>
