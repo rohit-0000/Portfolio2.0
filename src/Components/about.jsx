@@ -21,7 +21,7 @@ const About = () => {
         <div className="w-full h-full flex flex-col lg:flex-row items-center justify-center lg:justify-around gap-10 lg:gap-10 lg:px-0 ">
           <img
             src={About_me}
-            className="lg:max-h-[75vh] max-h-[50vh] max-w-[50%] rounded-2xl backdrop-blur-3xl bg-white/10 pt-5 px-5 hover:scale-110 transition-all duration-600 delay-300 "
+            className="lg:max-h-[75vh] max-h-[50vh] max-w-[90%] rounded-2xl backdrop-blur-3xl bg-white/10 pt-5 px-5 hover:scale-110 transition-all duration-600 delay-300 "
           />
           <div className="md:px-20 lg:px-0  flex flex-col gap-5  lg:text md:text-xl items-center lg:max-w-150 lg:py-10 lg:self-start">
             <p className="text-justify">
@@ -65,15 +65,15 @@ const About = () => {
 
             <div className="flex gap-10 items-center pt-10">
               <a href="https://leetcode.com/u/rohit20040121/" className="flex flex-col items-center gap-2">
-                <img src={leetcode} className="h-15" />
+                <img src={leetcode} className="h-9 md:h-15" />
                 <p className="text-xl">Leetcode</p>
               </a>
               <a className="flex flex-col items-center justify-between gap-2" href="https://www.geeksforgeeks.org/user/rohit2038sf/">
-                <img src={gfg} className="h-15 " />
+                <img src={gfg} className="h-9 md:h-15" />
                 <p className="text-xl">GFG</p>
               </a>
               <a className="flex flex-col items-center gap-2 " href="https://github.com/rohit-0000">
-                <img src={github} className="h-15" />
+                <img src={github} className="h-9 md:h-15" />
                 <p className="text-xl">Github</p>
               </a>
             </div>
