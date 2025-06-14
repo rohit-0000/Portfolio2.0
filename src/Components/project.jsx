@@ -20,6 +20,7 @@ import htmlLogo from "../assets/htmlLogo.png";
 import AnimateRightToLeft from "./Animation/AnimateRightToLeft";
 import AnimateLeftToright from "./Animation/AnimateLeftToright";
 import AnimatedSection from "./Animation/AnimatedSectionScale";
+import { motion } from "framer-motion";
 
 const project = () => {
   const [openProject, setOpenProject] = useState("");
@@ -285,7 +286,7 @@ const project = () => {
   }
 
   return (
-    <AnimateLeftToright>
+    // <AnimateLeftToright>
       <div
         className="max-w-screen min-h-screen text-white flex flex-col px-10 md:px-20 lg:px-40 items-center pb-10 pt-15 bg-neutral-950"
         id="Project"
@@ -318,16 +319,18 @@ const project = () => {
                     <h3 className="text-3xl font-bold">{project.name}</h3>
                     <p>{project.description}</p>
                   </div>
-                  <div className="w-full flex justify-between">
+                  <div className="w-full flex justify-between" >
                     <a
                       href={project.link}
                       className="bg-blue-500 text-white px-5 py-2 rounded hover:bg-blue-600 transition-all duration-500 active:scale-90"
+                      onClick={e => e.stopPropagation()}
                     >
                       Live Demo
                     </a>
                     <a
                       href={project.git}
                       className="bg-black text-white px-5 py-2 rounded cursor-pointer hover:bg-[#000000d0] transition-all duration-200 active:scale-90"
+                      onClick={e => e.stopPropagation()}
                     >
                       Github
                     </a>
@@ -438,7 +441,7 @@ const project = () => {
             );
           })()}
       </div>
-    </AnimateLeftToright>
+    // </AnimateLeftToright>
   );
 };
 

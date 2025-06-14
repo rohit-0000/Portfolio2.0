@@ -17,8 +17,8 @@ const AnimatedSection = ({ children }) => {
   return (
     <motion.div
       ref={ref}
-      initial={{ opacity: 0, scale: 0 }}
-      animate={inView ? { opacity: 1, scale: 1 } : { opacity: 0, scale: 0 }}
+      initial={{ opacity: 0, scale: 0.5 }}
+      animate={inView ? { opacity: 1, scale: 1 } : { opacity: 0, scale: 0.5 }}
       transition={{ duration: 0.8 }}
     >
       {children}

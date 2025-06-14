@@ -19,7 +19,7 @@ const AnimateRightToLeft = ({ children }) => {
     <motion.div
       ref={ref}
       initial={{ x:"90vw", opacity: 0 }}
-      animate={inView ? { x: "0vw", opacity: 1 } : { x:"90vw", opacity: 0 }}
+      animate={inView ? { x:0, opacity: 1 } : { x:"90vw", opacity: 0 }}
       transition={{ duration: 0.7 }}
     >
       {children}

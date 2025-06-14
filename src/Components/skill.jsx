@@ -9,7 +9,7 @@ import sqlLogo from "../assets/sqlLogo.png";
 import CSS from "../assets/cssLogo.png";
 import html from "../assets/htmlLogo.png";
 import AnimatedSection from "./Animation/AnimatedSectionScale";
-import AnimateLeftToRight from "./Animation/AnimateLeftToright";
+import AnimateRightToLeft from "./Animation/AnimateRightToLeft";
 const skill = () => {
   const skills = [
     CppLogo,
@@ -78,7 +78,7 @@ const skill = () => {
   ];
 
   return (
-    <AnimateLeftToRight>
+    // <AnimateRightToLeft>
     <div
     className=" max-w-screen min-h-screen text-white  flex flex-col items-center px-10 md:px-20 lg:px-40 pb-10 pt-15  bg-neutral-950 "
     id="Skill"
@@ -113,7 +113,7 @@ const skill = () => {
           })}
         </div>
       </div>
-    </AnimateLeftToRight>
+    // </AnimateRightToLeft>
   );
 };
 

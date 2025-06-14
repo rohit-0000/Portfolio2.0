@@ -12,7 +12,7 @@ const About = () => {
         initial={{ opacity: 0, y: -50 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.8 }}
-        className=" max-w-screen lg:min-h-screen text-white  flex flex-col lg:px-20 px-10  items-center  pb-10 pt-15 mtl-[100vh] bg-neutral-950 "
+        className=" max-w-screen lg:min-h-screen text-white  flex flex-col lg:px-20 px-10  items-center  pb-10 pt-15 mtl-[100vh] bg-neutral-950 transition-all duration-500"
         id="About"
       >
         <h1 className="text-4xl md:text-5xl mb-15 font-bold text-yellow-300 relative after:absolute after:content-[''] after:h-1.5 after:w-full after:left-0 after:bg-amber-300 md:after:-bottom-5 after:-bottom-3 after:rounded">
@@ -21,7 +21,7 @@ const About = () => {
         <div className="w-full h-full flex flex-col lg:flex-row items-center justify-center lg:justify-around gap-10 lg:gap-10 lg:px-0 ">
           <img
             src={About_me}
-            className="lg:max-h-[75vh] max-h-[50vh] max-w-[50%] rounded-2xl backdrop-blur-3xl bg-white/10 pt-5 hover:scale-110 transition-all duration-300 delay-300"
+            className="lg:max-h-[75vh] max-h-[50vh] max-w-[50%] rounded-2xl backdrop-blur-3xl bg-white/10 pt-5 px-5 hover:scale-110 transition-all duration-600 delay-300 "
           />
           <div className="md:px-20 lg:px-0  flex flex-col gap-5  lg:text md:text-xl items-center lg:max-w-150 lg:py-10 lg:self-start">
             <p className="text-justify">
@@ -69,7 +69,7 @@ const About = () => {
                 <p className="text-xl">Leetcode</p>
               </a>
               <a className="flex flex-col items-center justify-between gap-2" href="https://www.geeksforgeeks.org/user/rohit2038sf/">
-                <img src={gfg} className="h-15" />
+                <img src={gfg} className="h-15 " />
                 <p className="text-xl">GFG</p>
               </a>
               <a className="flex flex-col items-center gap-2 " href="https://github.com/rohit-0000">
