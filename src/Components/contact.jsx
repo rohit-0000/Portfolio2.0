@@ -65,7 +65,7 @@ const contact = () => {
               download="Rohit-resume.pdf"
               className="bg-green-500 px-2 py-2 w-fit rounded-md active:scale-90 text-xl"
             >
-              Download CV
+              Download Resume
             </a>
           </div>
           <div className="w-full h-full">

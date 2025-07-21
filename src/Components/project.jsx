@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from "react";
 import chatApp from "../assets/Project/chatApp.png";
+import heritaQuest from "../assets/Project/heritaQuest.png";
 import notesApp from "../assets/Project/notesApp.png";
 import journalApp from "../assets/Project/journalApp.png";
 import portfolio1O from "../assets/Project/portfolio1.0.png";
@@ -16,6 +17,7 @@ import mongoDbLogo from "../assets/mongoDbLogo.png";
 import tailwindLogo from "../assets/tailwindLogo.png";
 import reduxLogo from "../assets/reduxLogo.png";
 import cssLogo from "../assets/cssLogo.png";
+import postgree from "../assets/postgresql.png";
 import htmlLogo from "../assets/htmlLogo.png";
 import AnimateRightToLeft from "./Animation/AnimateRightToLeft";
 import AnimateLeftToright from "./Animation/AnimateLeftToright";
@@ -59,6 +61,35 @@ const project = () => {
       },
       link: "https://chat-app-five-woad-79.vercel.app/home",
       git: "https://github.com/rohit-0000/chat_App01",
+    },
+    {
+      banner: heritaQuest,
+      name: "Herita Quest",
+      description:
+        "Herita Quest is an interactive, map-based quiz platform that blends exploration with learning. Click on any location to unlock engaging quizzes on historical and cultural topics.",
+      features: {
+        "Interactive Map Integration":
+          "Powered by MapTiler for seamless and responsive geographical exploration.",
+        "Quiz Generation with AI":
+          "Utilizes Gemini API to dynamically generate quizzes based on selected locations.",
+        "User Authentication":
+          "Secure login system using JWT, OAuth2 (Google), and Bcrypt password encoding.",
+        "Responsive Frontend":
+          "Mobile-first design implemented using React and Tailwind CSS for a smooth user experience.",
+        "Quiz Data & Persistence":
+          "PostgreSQL used for structured quiz and user data storage.",
+        Deployment:
+          "Frontend hosted on Vercel; Backend deployed on Render; PostgreSQL database managed via Supabase.",
+      },
+      techStack: {
+        Java: javaLogo,
+        "Spring Boot": springBootLogo,
+        "React JS": reactLogo,
+        "Tailwind CSS": tailwindLogo,
+        "Postgre SQL": postgree,
+      },
+      link: "https://herita-quest-sable.vercel.app/",
+      git: "https://github.com/rohit-0000/heritaQuest",
     },
     {
       banner: notesApp,
@@ -287,160 +318,156 @@ const project = () => {
 
   return (
     // <AnimateLeftToright>
-      <div
-        className="max-w-screen min-h-screen text-white flex flex-col px-10 md:px-20 lg:px-40 items-center pb-10 pt-15 bg-neutral-950"
-        id="Project"
-      >
-        <h1 className="text-4xl md:text-5xl mb-15 font-bold text-yellow-300 relative after:absolute after:content-[''] after:h-1.5 after:w-full after:left-0 after:bg-amber-300 md:after:-bottom-5 after:-bottom-3 after:rounded">
-          My Projects
-        </h1>
+    <div
+      className="max-w-screen min-h-screen text-white flex flex-col px-10 md:px-20 lg:px-30 items-center pb-10 pt-15 bg-neutral-950"
+      id="Project"
+    >
+      <h1 className="text-4xl md:text-5xl mb-15 font-bold text-yellow-300 relative after:absolute after:content-[''] after:h-1.5 after:w-full after:left-0 after:bg-amber-300 md:after:-bottom-5 after:-bottom-3 after:rounded">
+        My Projects
+      </h1>
 
-        <div className="flex flex-wrap gap-12 justify-center ">
-          {ProjectDetail.map((project, index) => (
-            <AnimatedSection key={index}>
-              <div
-                className={`w-80 h-120 md:w-90 flex flex-col rounded-2xl bg-[#e1e1e1] border-b-3 border-t-3 border-yellow-500 items-center transition-all duration-300 delay-150 relative overflow-hidden ${
-                  openProject === ""
-                    ? "hover:scale-110"
-                    : "pointer-events-none opacity-50"
-                }`}
-                onClick={(e) => {
-                  setClickLocation(e.currentTarget.getBoundingClientRect());
-                  setOpenProject(project.name);
-                  setTimeout(() => setProjectAnimation(true), 300);
-                }}
-              >
+      <div className="flex flex-wrap gap-12 justify-center ">
+        {ProjectDetail.map((project, index) => (
+          <AnimatedSection key={index}>
+            <div
+              className={`w-80 h-120 md:w-90 flex flex-col rounded-2xl bg-[#e1e1e1] border-b-3 border-t-3 border-yellow-500 items-center transition-all duration-300 delay-150 relative overflow-hidden ${
+                openProject === ""
+                  ? "hover:scale-110"
+                  : "pointer-events-none opacity-50"
+              }`}
+              onClick={(e) => {
+                setClickLocation(e.currentTarget.getBoundingClientRect());
+                setOpenProject(project.name);
+                setTimeout(() => setProjectAnimation(true), 300);
+              }}
+            >
+              <img
+                src={project.banner}
+                className="w-80 md:w-90 rounded-t-2xl transition-all duration-500 hover:scale-108 delay-150"
+              />
+              <div className="w-full flex flex-col p-5 justify-between text-black text-justify h-full">
+                <div className="flex flex-col gap-2">
+                  <h3 className="text-3xl font-bold">{project.name}</h3>
+                  <p>{project.description}</p>
+                </div>
+                <div className="w-full flex justify-between">
+                  <a
+                    href={project.link}
+                    className="bg-blue-500 text-white px-5 py-2 rounded hover:bg-blue-600 transition-all duration-500 active:scale-90"
+                    onClick={(e) => e.stopPropagation()}
+                  >
+                    Live Demo
+                  </a>
+                  <a
+                    href={project.git}
+                    className="bg-black text-white px-5 py-2 rounded cursor-pointer hover:bg-[#000000d0] transition-all duration-200 active:scale-90"
+                    onClick={(e) => e.stopPropagation()}
+                  >
+                    Github
+                  </a>
+                </div>
+              </div>
+            </div>
+          </AnimatedSection>
+        ))}
+      </div>
+
+      {/* Animated Fullscreen Overlay */}
+      {openProject !== "" &&
+        (() => {
+          const project = ProjectDetail.find((p) => p.name === openProject);
+          if (!project) return null;
+          return (
+            <div
+              className={`
+              fixed top-0 left-0 w-screen h-screen bg-[#000000d8] backdrop-blur-xl z-1000 flex flex-col items-center justify-center 
+              transition-all duration-300 pb-10 md:pb-0 ${
+                projectAnimation ? " opacity-100 " : " opacity-0 rounded-2xl"
+              } }
+            `}
+              style={projectAnimation ? {} : getOverlayStyle()}
+            >
+              <div className="w-full h-full p-10 md:px-20 lg:px-40 flex flex-col items-center gap-5 overflow-y-auto scrollbar ">
+                <button
+                  className="absolute top-1 right-5 text-4xl text-white font-bold z-50"
+                  onClick={() => {
+                    setProjectAnimation(false);
+                    setTimeout(() => {
+                      setOpenProject("");
+                      setClickLocation(null);
+                    }, 300);
+                  }}
+                >
+                  &times;
+                </button>
+
                 <img
                   src={project.banner}
-                  className="w-80 md:w-90 rounded-t-2xl transition-all duration-500 hover:scale-108 delay-150"
+                  className="w-80 md:w-130 lg:w-200 rounded-2xl "
                 />
-                <div className="w-full flex flex-col p-5 justify-between text-black text-justify h-full">
-                  <div className="flex flex-col gap-2">
-                    <h3 className="text-3xl font-bold">{project.name}</h3>
-                    <p>{project.description}</p>
+                <div className="w-full flex flex-col p- justify-between text-white text-justify h-full ">
+                  <div className="flex flex-col gap-5">
+                    <h3 className="text-4xl font-bold self-center">
+                      {project.name}
+                    </h3>
+                    <p className="text-xl">{project.description}</p>
+
+                    <h4 className="text-3xl font-bold">Features :</h4>
+                    <ul className="list-disc flex flex-col gap-3">
+                      {Object.entries(project?.features).map(([key, value]) => {
+                        return (
+                          <li key={key}>
+                            <span className="text-xl font-bold">{key} : </span>
+                            <span className="text-xl"> {value}</span>
+                          </li>
+                        );
+                      })}
+                    </ul>
+
+                    <h4 className="text-3xl font-bold">Tech Stack :</h4>
+
+                    <ul className=" flex justify-center items-center gap-5 flex-wrap">
+                      {Object.entries(project?.techStack).map(
+                        ([key, value]) => {
+                          return (
+                            <li
+                              key={key}
+                              className="flex flex-col justify-center items-center"
+                            >
+                              <img
+                                src={value}
+                                className=" w-25 md:w-35 lg:w-45 aspect-square object-cover filter drop-shadow-[0_0_10px] drop-shadow-white"
+                              />
+                              <h3 className="self-center font-bold text-xl">
+                                {key}
+                              </h3>
+                            </li>
+                          );
+                        }
+                      )}
+                    </ul>
                   </div>
-                  <div className="w-full flex justify-between" >
+
+                  <div className="w-full flex justify-between mt-5">
                     <a
                       href={project.link}
-                      className="bg-blue-500 text-white px-5 py-2 rounded hover:bg-blue-600 transition-all duration-500 active:scale-90"
-                      onClick={e => e.stopPropagation()}
+                      className="bg-blue-500 text-white px-5 py-2 rounded hover:bg-blue-600 transition-all duration-500 active:scale-90 md:text-3xl"
                     >
                       Live Demo
                     </a>
                     <a
                       href={project.git}
-                      className="bg-black text-white px-5 py-2 rounded cursor-pointer hover:bg-[#000000d0] transition-all duration-200 active:scale-90"
-                      onClick={e => e.stopPropagation()}
+                      className="bg-white/90 text-black px-5 py-2 rounded cursor-pointer hover:bg-[#ffffff8c] transition-all duration-200 active:scale-90 md:text-3xl"
                     >
                       Github
                     </a>
                   </div>
                 </div>
               </div>
-            </AnimatedSection>
-          ))}
-        </div>
-
-        {/* Animated Fullscreen Overlay */}
-        {openProject !== "" &&
-          (() => {
-            const project = ProjectDetail.find((p) => p.name === openProject);
-            if (!project) return null;
-            return (
-              <div
-                className={`
-              fixed top-0 left-0 w-screen h-screen bg-[#000000d8] backdrop-blur-xl z-1000 flex flex-col items-center justify-center 
-              transition-all duration-300 pb-10 md:pb-0 ${
-                projectAnimation ? " opacity-100 " : " opacity-0 rounded-2xl"
-              } }
-            `}
-                style={projectAnimation ? {} : getOverlayStyle()}
-              >
-                <div className="w-full h-full p-10 md:px-20 lg:px-40 flex flex-col items-center gap-5 overflow-y-auto scrollbar ">
-                  <button
-                    className="absolute top-1 right-5 text-4xl text-white font-bold z-50"
-                    onClick={() => {
-                      setProjectAnimation(false);
-                      setTimeout(() => {
-                        setOpenProject("");
-                        setClickLocation(null);
-                      }, 300);
-                    }}
-                  >
-                    &times;
-                  </button>
-
-                  <img
-                    src={project.banner}
-                    className="w-80 md:w-130 lg:w-200 rounded-2xl "
-                  />
-                  <div className="w-full flex flex-col p- justify-between text-white text-justify h-full ">
-                    <div className="flex flex-col gap-5">
-                      <h3 className="text-4xl font-bold self-center">
-                        {project.name}
-                      </h3>
-                      <p className="text-xl">{project.description}</p>
-
-                      <h4 className="text-3xl font-bold">Features :</h4>
-                      <ul className="list-disc flex flex-col gap-3">
-                        {Object.entries(project?.features).map(
-                          ([key, value]) => {
-                            return (
-                              <li key={key}>
-                                <span className="text-xl font-bold">
-                                  {key} :{" "}
-                                </span>
-                                <span className="text-xl"> {value}</span>
-                              </li>
-                            );
-                          }
-                        )}
-                      </ul>
-
-                      <h4 className="text-3xl font-bold">Tech Stack :</h4>
-
-                      <ul className=" flex justify-center items-center gap-5 flex-wrap">
-                        {Object.entries(project?.techStack).map(
-                          ([key, value]) => {
-                            return (
-                              <li
-                                key={key}
-                                className="flex flex-col justify-center items-center"
-                              >
-                                <img
-                                  src={value}
-                                  className=" w-25 md:w-35 lg:w-45 aspect-square object-cover filter drop-shadow-[0_0_10px] drop-shadow-white"
-                                />
-                                <h3 className="self-center font-bold text-xl">
-                                  {key}
-                                </h3>
-                              </li>
-                            );
-                          }
-                        )}
-                      </ul>
-                    </div>
-
-                    <div className="w-full flex justify-between mt-5">
-                      <a
-                        href={project.link}
-                        className="bg-blue-500 text-white px-5 py-2 rounded hover:bg-blue-600 transition-all duration-500 active:scale-90 md:text-3xl"
-                      >
-                        Live Demo
-                      </a>
-                      <a
-                        href={project.git}
-                        className="bg-white/90 text-black px-5 py-2 rounded cursor-pointer hover:bg-[#ffffff8c] transition-all duration-200 active:scale-90 md:text-3xl"
-                      >
-                        Github
-                      </a>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            );
-          })()}
-      </div>
+            </div>
+          );
+        })()}
+    </div>
     // </AnimateLeftToright>
   );
 };
