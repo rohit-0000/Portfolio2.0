@@ -29,62 +29,62 @@ const skill = () => {
       name: "CPP",
       description:
         "Proficient in data structures and algorithms, with extensive experience in C++",
-        color:"blue",
+        color:"blue-500",
     },
     {
       name: "JAVA",
       description:
         "Strong understanding of object-oriented programming and DSA principles in Java",
-        color:"red",
+        color:"red-500",
     },
     {
       name: "JAVASCRIPT",
       description:
         "Skilled in developing dynamic and interactive web applications using modern JavaScript (ES6+).",
-        color:"yellow",
+        color:"yellow-500",
     },
     {
       name: "REACT",
       description:
         "Proficient in building modern, responsive user interfaces with React.js, focusing on component-based architecture and state management",
-        color:"cyan",
+        color:"cyan-500",
     },
     {
       name: "SPRING BOOT",
       description:
         "Experienced in developing robust and scalable RESTful APIs using Spring Boot",
-        color:"green",
+        color:"green-500",
     },
     {
       name: "TAILWIND",
       description:
         "Skilled in rapidly building custom and responsive user interfaces using Tailwind CSS for efficient styling",
-        color:"cyan",
+        color:"cyan-500",
     },
     {
       name: "HTML",
       description:
         "Proficient in creating structured and semantic layouts for web applications.",
-        color:"orange",
+        color:"orange-500",
     },
     {
       name: "CSS",
       description:
         "Experienced in styling and visually enhancing web pages using modern CSS techniques.",
-        color:"blue",
+        color:"blue-500",
     },
 
     {
       name: "MONGODB",
       description:
         "Adept at designing and managing NoSQL databases with MongoDB for flexible and scalable data storage",
-        color:"green",
+        color:"green-500",
     },
     {
       name: "SQL",
       description:
         "Proficient in SQL for database management, querying, and optimizing relational data",
-        color:"blue",
+        color:"blue-500",
     },
   ];
 
@@ -104,10 +104,10 @@ const skill = () => {
               <div className={`p-4 md:p-5 rounded-2xl flex flex-col justify-between items-center gap-2 hover:scale-105 transition-all duration-700 hover:shadow-md `}>
                 <img
                   src={skills[index]}
-                  className={`object-cover aspect-square w-25 md:w-40 self-center  filter drop-shadow-[0_0_10px] drop-shadow-${LogoDetail[index].color}-400`}
+                  className={`object-cover aspect-square w-25 md:w-40 self-center  filter drop-shadow-[0_0_10px] drop-shadow-${LogoDetail[index].color}`}
                 />
 
-                <h2 className={`text-xl md:text-2xl font-bold text-${LogoDetail[index].color}-500`}>
+                <h2 className={`text-xl md:text-2xl font-bold text-${LogoDetail[index].color}`}>
                   {LogoDetail[index].name}
                 </h2>
               </div>
