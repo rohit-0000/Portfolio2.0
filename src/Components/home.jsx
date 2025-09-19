@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import RohitImg from "../assets/Rohit.png";
+import RohitImg from "../assets/Rohit1.png";
 import Resume from "../assets/Rohit-Resume.pdf";
 import { motion } from "framer-motion";
 const titles = ["Full-Stack Developer", "Programmer"];
@@ -67,7 +67,7 @@ const home = () => {
       initial={{x:200,opacity:0}}
       animate={{x:0,opacity:1}}
       transition={{duration:0.6}}
-      className="lg:self-end md:h-180 md:-right-50  md:absolute lg:-right-10 md:bottom-0 -z-1 h-100 object-cover filter drop-shadow-[0_0_5px] drop-shadow-yellow-300 " />
+      className="lg:self-end md:h-180 md:-right-10  md:absolute lg:right-15 md:bottom-0 -z-1 h-100 object-cover filter drop-shadow-[0_0_70px] drop-shadow-blue-400 " />
     </div>
   );
 };
