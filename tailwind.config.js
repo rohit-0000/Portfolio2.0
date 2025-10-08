@@ -15,7 +15,10 @@ module.exports = {
     "text-red-500",
     "text-blue-500",
     "drop-shadow-red-500",
-    "drop-shadow-blue-500"
+    "drop-shadow-blue-400",
+    "drop-shadow-blue-900",
+    "text-blue-900",
+    "text-blue-400"
   ],
   theme: {
     extend: {},

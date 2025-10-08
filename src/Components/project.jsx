@@ -332,7 +332,7 @@ const project = () => {
             <div
               className={`w-80 h-120 md:w-90 flex flex-col rounded-2xl bg-[#e1e1e1] border-b-3 border-t-3 border-yellow-500 items-center transition-all duration-300 delay-150 relative overflow-hidden ${
                 openProject === ""
-                  ? "hover:scale-110"
+                  ? "hover:scale-110  transition-all duration-500"
                   : "pointer-events-none opacity-50"
               }`}
               onClick={(e) => {
