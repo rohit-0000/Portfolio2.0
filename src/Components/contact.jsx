@@ -1,9 +1,9 @@
 import React from "react";
 import { useForm } from "react-hook-form";
-import gmail from "../assets/gmail.svg";
-import linkedin from "../assets/Linkedin.svg";
-import github from "../assets/github.svg";
-import resume from "../assets/Rohit-Resume.pdf";
+import gmail from "../assets/Contact/gmail.svg";
+import linkedin from "../assets/Contact/Linkedin.svg";
+import github from "../assets/Contact/github.svg";
+import resume from "../assets/Resume/Rohit-Resume.pdf";
 import AnimateLeftToRight from "./Animation/AnimateLeftToright";
 import axios from "axios";
 import toast from "react-hot-toast";

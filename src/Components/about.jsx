@@ -1,10 +1,10 @@
 import React from "react";
-import About_me from "../assets/About_me1.png";
+import About_me from "../assets/Profile/About_me1.png";
 
 import AnimateLeftToright from "./Animation/AnimateLeftToright";
-import leetcode from "../assets/leetcode.png";
-import gfg from "../assets/gfg.png";
-import github from "../assets/github.svg";
+import leetcode from "../assets/Contact/leetcode.png";
+import gfg from "../assets/Contact/gfg.png";
+import github from "../assets/Contact/github.svg";
 const About = () => {
   return (
     <AnimateLeftToright>

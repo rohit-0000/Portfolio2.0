@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
-import RohitImg from "../assets/Rohit1.png";
-import Resume from "../assets/Rohit-Resume.pdf";
+import RohitImg from "../assets/Profile/Rohit1.png";
+import Resume from "../assets/Resume/Rohit-Resume.pdf";
 import { motion } from "framer-motion";
 const titles = ["Full-Stack Developer", "Programmer"];
 const home = () => {
