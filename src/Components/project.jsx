@@ -1,7 +1,7 @@
 import React, { useState, useEffect, useRef } from "react";
 import AnimatedSection from "./Animation/AnimatedSectionScale";
 import { allProjectDetail } from "../Data/project";
-import leftIcon from "../assets/Icons/leftIcon.svg"
+import leftIcon from "../assets/Icons/LeftIcon.svg"
 
 const project = () => {
   const [openProject, setOpenProject] = useState("");
