@@ -3,7 +3,7 @@ import { NavLink } from "react-router-dom";
 
 const navbar = () => {
   const [sidebar, setSidebar] = useState(false);
-  const sections = ["Home", "About", "Skill", "Project", "Contact"];
+  const sections = ["Home", "About", "Skill", "Experience", "Project", "Contact"];
   const [activeSection, setActiveSection] = useState("");
   const sidebarRef = useRef(null);
 

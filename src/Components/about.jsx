@@ -1,5 +1,5 @@
 import React from "react";
-import About_me from "../assets/Profile/About_me1.png";
+import About_me from "../assets/Profile/AboutMe.png";
 
 import AnimateLeftToright from "./Animation/AnimateLeftToright";
 import leetcode from "../assets/Contact/leetcode.png";
@@ -22,7 +22,7 @@ const About = () => {
           <div className="w-full h-full flex flex-col lg:flex-row items-center justify-center lg:justify-around gap-10 lg:gap-10 lg:px-0 ">
             <img
               src={About_me}
-              className="max-h-[74vh] rounded-2xl hover:scale-110 transition-all duration-600 delay-300 filter drop-shadow-[0_0_70px] drop-shadow-red-400"
+              className="max-h-[74vh] rounded-2xl hover:scale-110 transition-all duration-600 delay-300 filter drop-shadow-[0_0_70px] drop-shadow-amber-100/80"
             />
             <div className="md:px-20 lg:px-0  flex flex-col gap-5  lg:text md:text-xl items-center lg:max-w-150 lg:py-10 lg:self-start">
               <p className="text-justify">
