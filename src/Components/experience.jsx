@@ -98,7 +98,7 @@ const experience = () => {
                                     <div className="relative z-10 flex min-h-[30rem] flex-col justify-between p-6 md:p-10 lg:p-12">
                                         <div className="flex items-start justify-between gap-4">
                                             <div className="flex items-start gap-4">
-                                                <div className="rounded-2xl border border-white/10 bg-white/10 p-3 backdrop-blur-sm">
+                                                <div className="rounded-2xl border border-white/10 bg-white/10 p-3 backdrop-blur-sm hidden md:block">
                                                     <img
                                                         src={experience.logo}
                                                         alt={`${experience.company} logo`}
