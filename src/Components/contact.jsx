@@ -44,11 +44,11 @@ const contact = () => {
             </div>
             <div>
             <a
-              href="https://www.linkedin.com/in/rohit-43107a253/"
+              href="https://www.linkedin.com/in/rohit0000/"
               className="flex gap-2 items-center text-xl w-fit"
             >
               <img src={linkedin} className="w-8" />
-              <p>rohit-43107a253</p>
+              <p>rohit0000</p>
             </a></div>
             
             <div><a

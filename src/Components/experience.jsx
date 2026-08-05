@@ -4,22 +4,13 @@ import leftIcon from "../assets/Icons/LeftIcon.svg";
 import AnimateLeftToright from "./Animation/AnimateLeftToright";
 
 const experience = () => {
-    const [selectedExperience, setSelectedExperience] = useState(null);
-    const [isOverlayVisible, setIsOverlayVisible] = useState(false);
     const scrollRef = useRef(null);
     const [isAtStart, setIsAtStart] = useState(true);
     const [isAtEnd, setIsAtEnd] = useState(false);
 
 
 
-    useEffect(() => {
-        if (selectedExperience) {
-            document.body.classList.add("overflow-hidden");
-        } else {
-            document.body.classList.remove("overflow-hidden");
-        }
-        return () => document.body.classList.remove("overflow-hidden");
-    }, [selectedExperience]);
+    
 
     useEffect(() => {
         const el = scrollRef.current;
@@ -39,15 +30,7 @@ const experience = () => {
         return () => el.removeEventListener("scroll", handleScroll);
     }, []);
 
-    const openExperienceDetails = (experience) => {
-        setSelectedExperience(experience);
-        setTimeout(() => setIsOverlayVisible(true), 10);
-    };
-
-    const closeExperienceDetails = () => {
-        setIsOverlayVisible(false);
-        setTimeout(() => setSelectedExperience(null), 250);
-    };
+    
 
     const scrollLeftFn = () => {
         if (isAtStart) return;
@@ -85,8 +68,7 @@ const experience = () => {
                                 className="min-w-full snap-center"
                             >
                                 <div
-                                    className="group relative min-h-[30rem] w-full cursor-pointer overflow-hidden rounded-[2rem] border-l-3 border-r-3 border-yellow-500  transition-transform duration-300 hover:scale-[1.01]"
-                                    onClick={() => openExperienceDetails(experience)}
+                                    className="group relative min-h-[30rem] w-full overflow-hidden rounded-[2rem] border-l-3 border-r-3 border-yellow-500  transition-transform duration-300 hover:scale-[1.01]"
                                 >
                                     <img
                                         src={experience.building}
@@ -118,7 +100,7 @@ const experience = () => {
                                                 </div>
                                             </div>
 
-                                            <div className="rounded-full border border-yellow-300/30 bg-yellow-300/10 px-4 py-2 text-sm  md:text-base text-yellow-100 text-center">
+                                            <div className="rounded-full border border-yellow-300/30 bg-yellow-300/10 px-4 py-2 text-xs  md:text-base text-yellow-100 text-center">
                                                 {experience.duration}
                                                 <p>{experience.location}</p>
                                             </div>
@@ -144,7 +126,7 @@ const experience = () => {
                                     </div>
                                 </div>
                             </div>
-                        ))}
+                        )).reverse()}
                     </div>
 
                     <div className="absolute right-0 top-0 z-20 flex h-full items-center bg-gradient-to-l from-neutral-950 to-transparent pr-2 md:pr-4" onClick={scrollRightFn}>
@@ -156,85 +138,9 @@ const experience = () => {
                     </div>
                 </div>
 
-                <p className=" max-w-2xl px-5 text-center text-sm text-gray-400/80 md:text-base">
-                    Click the card to open the certificate and achievement view.
-                </p>
+                
 
-                {selectedExperience && (
-                    <div
-                        className={`fixed inset-0 z-[60] flex items-center justify-center bg-black/85 px-4 py-6 backdrop-blur-xl transition-opacity duration-300  ${isOverlayVisible ? "opacity-100" : "opacity-0"}`}
-                        onClick={(event) => {
-                            if (event.target === event.currentTarget) {
-                                closeExperienceDetails();
-                            }
-                        }}
-                    >
-                        <div className="relative max-h-[92vh] w-full max-w-6xl overflow-y-auto rounded-[2rem] border border-white/10 bg-neutral-950/95 p-5 shadow-2xl shadow-black/50 md:p-8 scrollbar">
-                            <button
-                                className="absolute right-4 top-4 text-4xl font-bold text-white transition-transform duration-200 hover:scale-110"
-                                onClick={closeExperienceDetails}
-                                aria-label="Close experience details"
-                            >
-                                &times;
-                            </button>
-
-                            <div className="grid gap-8 lg:grid-cols-[1.05fr_0.95fr]">
-                                <div className="space-y-5">
-                                    <div>
-                                        <p className="text-xs font-semibold uppercase tracking-[0.35em] text-yellow-300/80">
-                                            Certificate
-                                        </p>
-                                        <div className="mt-3 flex items-center gap-3">
-                                            <img
-                                                src={selectedExperience.logo}
-                                                alt={`${selectedExperience.company} logo`}
-                                                className="h-12 w-12 rounded-xl bg-white/10 object-contain p-2"
-                                            />
-                                            <div>
-                                                <h3 className="text-3xl font-bold text-white md:text-4xl">
-                                                    {selectedExperience.company}
-                                                </h3>
-                                                <p className="mt-2 text-white/75">
-                                                    {selectedExperience.position} · {selectedExperience.duration}
-                                                </p>
-                                            </div>
-                                        </div>
-                                    </div>
-
-                                    <div className="overflow-hidden rounded-[1.75rem] border border-white/10 bg-white/5">
-                                        <img
-                                            src={selectedExperience.certificate}
-                                            alt={`${selectedExperience.company} certificate`}
-                                            className="h-full w-full object-contain"
-                                        />
-                                    </div>
-                                </div>
-
-                                <div className="space-y-5">
-                                    <div>
-                                        <p className="text-xs font-semibold uppercase tracking-[0.35em] text-yellow-300/80">
-                                            Achievements
-                                        </p>
-                                        <h4 className="mt-3 text-2xl font-bold text-white md:text-3xl">
-                                            What I worked on
-                                        </h4>
-                                    </div>
-
-                                    <ul className="space-y-3">
-                                        {selectedExperience.achievements.map((achievement) => (
-                                            <li
-                                                key={achievement}
-                                                className="rounded-2xl border border-white/10 bg-white/5 px-4 py-3 text-sm leading-7 text-white/90 md:text-base"
-                                            >
-                                                {achievement}
-                                            </li>
-                                        ))}
-                                    </ul>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                )}
+                
             </div>
         </AnimateLeftToright>
     );
